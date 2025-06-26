@@ -2,87 +2,127 @@
 
 ## Über mich
 
-- IT-Consultant mit Fokus auf Data Strategy, Analytics, DevOps, Process Mining und Low-Code Automation.
-- Erfahrung als Scrum Master, Product Owner, Technical Consultant.
-- Private Infrastruktur mit Schwerpunkt auf Selbst-Hosting, Automatisierung und Privacy.
+- IT-Consultant (Data Strategy, Analytics, DevOps, Process Mining, Low-Code Automation).
+- Praxis in Scrum Mastery, Product Ownership, Technical Consulting.
+- Fokus: Selbst-Hosting, Automatisierung, Privacy, effiziente Wissensverwaltung.
 
 ## Persönliche Arbeitsweise & Präferenzen
 
-- Bevorzuge strukturierte, dokumentierte Workflows (Markdown als Standard für Doku und Protokolle).
-- Setze stark auf Automatisierung (n8n, Node-RED, Home Assistant).
-- Wert lege ich auf Wiederverwendbarkeit, klare Modularisierung und offene Schnittstellen (API-first).
-- Docker als Standard für Deployments, bevorzugt Compose-Setup.
-- Container laufen bevorzugt auf Synology NAS oder Oracle VPS, gelegentlich auch auf dem MacBook.
-- Lokale Entwicklung überwiegend auf MacBook Pro M1 Max.
-- In Projekten: Fokus auf verständliche Code-Dokumentation, nachvollziehbare Architekturentscheidungen, Testing (pytest/Playwright), Linting.
-- Zwei Oracle VPS sind im Einsatz: Standort Amsterdam und Zürich. Züricher Maschine ist mit Coolify, Amsterdam mit CapRover konfiguriert.
-- Meine persönliche Webseite certain.cc liegt auf dem VPS Amsterdam, parallel zur persönlichen Webseite meiner Partnerin (parr.cc), die ich entwickle und verwalte
-- Das Domain Management liegt komplett bei Cloudflare. Alle DNS Settings werden selbst konfiguriert.
-- Wichtige Tools: VSCode, Cursor, Terminal, GitHub, Docker Desktop, Portainer, Tailscale, Miro, Witsy, zed, claude, gemini cli.
+- Dokumentation & Protokolle immer in Markdown, verteilt auf Craft.do und lokalen .md-Files.
+- PARA-System als Organisationsstandard (Projects, Areas, Resources, Archives) – Areas ergänze ich bei Bedarf.
+- Automatisierung als zentrale Produktivitätsstrategie: n8n, Node-RED, Home Assistant.
+- Open Source und Self-Hosting bevorzugt; SaaS nur, wenn notwendig und möglichst EU-basiert.
+- Workflows klar, modular und API-zentriert. Architekturentscheidungen und Setup als Markdown-Changelog.
+
+## Haupt-Produktivitäts- und Wissensmanagement-App
+
+- **Craft.do** (Mac, iOS):  
+  - Hauptsächliche Notizen- und Organisationslösung.
+  - Dokumentbasiert, mit PARA-basiertem Ordnungssystem.
+  - Wissensstruktur soll mittelfristig mit RAG- und Graph-Lösungen ergänzt werden, da Craft keine Memory Layer kennt.
+  - Ziel: Bessere Verknüpfung mit PKM, AI-gestütztem Suchen, Agenten und Knowledge-Graphen.
 
 ## Infrastruktur & Technologien
 
-### Synology NAS
+### Synology NAS (DS-723+)
 
-- Modell: DS-723+ (plus ggf. weitere Geräte)
-- Speicher: Hybrid-Setup, Fokus auf SSD/NVMe, optimiert auf geringe Lautstärke und Stromverbrauch.
-- Docker Engine läuft als Hauptplattform für Self-Hosting.
-- Wichtige Verzeichnisse:  
-    - `/volume1/docker/<applikation>/` für alle persistente Daten
-- Verwaltung:  
-    - Docker Compose (keine Version-Keys mehr, aktuelle Syntax),  
-    - Portainer als UI für Container-Management,
-    - Reverse Proxy: Synology-Proxy.
-- Datensicherung: Automatisierte Backups auf Backblaze, Monitoring über Uptime Kuma.
-- Netzwerkanbindung: Tailscale (inkl. ACLs für feingranulare Freigaben), gelegentlich Headscale, Cloudflare für DDNS, Wildcard-SSL via ACME.
-- Internetleitung: 50 up, 50 down, DSL bei Vodafone.
-- 2,5 Gbit Switch am Fritzbox Router 6660, als WLAN Router kommen eero und eero pro zum einsatz. Das NAS hat einen 10 Gbit LAN Anschluss, den ich nutze.
+- SSD/NVMe-Fokus, Stromsparen, leise.
+- Docker Engine für Self-Hosting, alles unter `/volume1/docker/<applikation>/`
+- Docker Compose, Portainer als UI, Reverse Proxy (meist Synology, teils NGINX).
+- Backups auf Backblaze, Monitoring via Uptime Kuma.
+- Netz: Tailscale (Mesh, ACLs), Headscale gelegentlich, Cloudflare für DNS, Wildcard-SSL via ACME.
+- Netzwerk: Fritzbox 6660, eero WLAN, 10 Gbit LAN, 2,5 Gbit Switch.
 
+### Homelab & Cloud
 
-### Homelab/Cloud
+- Zwei Oracle VPS (Amsterdam/CapRover, Zürich/Coolify). Webseiten certain.cc und parr.cc liegen auf VPS Amsterdam.
+- n8n als zentrale Automatisierungsplattform (Workflows: PDF-Reparatur, API-Orchestration, Notifications).
+- Vector DBs: Qdrant (NAS), Supabase (Cloud), Neo4j (Test).  
+- LLM-Hosting: Ollama, Open WebUI (bisher kaum aktiv), Paperless-AI, Paperless-NGX.
+- RAG-Projekte (in Entwicklung): Embedding-Pipeline lokal/Cloud, Qdrant/Supabase als Storage, LlamaIndex/LangChain für Prototyping.
+- Home Assistant auf eigener Hardware (Home Assistant Yellow), Zigbee/Thread/Matter, Apple Home-Integration.
+- Diverse Docker-Apps: siehe Abschnitt oben.
 
-- VPS (Oracle Cloud, Ubuntu) für ausgelagerte Dienste wie Karakeep (Bookmarking), BudiBase und weitere.
-- n8n als zentrale Automatisierungsplattform (Workflows: PDF-Reparatur, API-Orchestration, Notification Services).
-- Vector DBs: Qdrant (NAS), Neo4j (geplanter test), Supabase für Vektor-Projekte, remote gehostet von Supabase selbst verfügbar.
-- LLM-Hosting: Ollama, Open WebUI (bisher ohne konkreten Use-Case idle), Paperless-AI, Paperless-NGX für Dokumentenmanagement. 
-- RAG-Projekte in der Entwicklung (Retrieval-Augmented Generation): Lokale Embedding-Pipeline geplant, Qdrant und/oder Supabase als Storage, LlamaIndex/LangChain ggf. für Prototyping.
-- Homeassistant läuft auf der eigenen Hardware Homeassistant Yellow. Integration mit Apple Home und Zigbee/Thread.
-- Ein Raspberry Pi steht mir für Bastelprojekte noch zur Verfügung.
-- Weitere Docker Container im Einsatz: actual (budgeting), calcom (appointments), docuseal (pdf signierung), flowise (AI Agent workflows - bisher nicht aktiv genutzt), github-runner, kestra (bisher mangels use-case nicht genutzt), mealie (rezepte), n8n (orchestrierung, APIs, MCPs), open webui (bisher kein use-case in betrieb), wallos (finance: abo management), watchtower, wud, paperless-ngx, paperless-ai, paperless-gpt, affine (bisher nicht inbenutzung)
-  
 ### Networking & Security
 
-- Netzwerkstruktur:  
-    - Fritzbox als Hardware-Firewall,
-    - interne Firewall auf NAS (GeoIP-Blocking, Portfilter),
-    - Tailscale ACLs und Zugangsbeschränkungen,
-    - Reverse Proxies auf Domainbasis, TLS per ACME.
-- Remote Access: Nur über Tailscale oder VPN (kein direkter Expose von Apps). Das NAS als auch beide VPS und alle mobilen Geräte sind über Tailscale nodes erschlossen und im MEsh verfügbar. Die VPS sind für Traffic über Port 443 und 80 erreichbar, das NAS nicht. Die SSH Ports sind überall dicht. SSH wird nur über die Tailscale-eigene Lösung betrieben.
-- Monitoring: Uptime Kuma, Dozzle für Log-Überwachung, Watchtower für Container-Updates.
+- Fritzbox, interne NAS-Firewall (GeoIP, Portfilter), Tailscale ACLs.
+- Remote-Zugriff nur via Tailscale/VPN.
+- Monitoring: Uptime Kuma, Dozzle, Watchtower.
+
+## Wichtige Plattformen & Technologie-Spezifika
+
+### n8n (Automatisierungsplattform)
+
+- Zentraler Baustein für Automatisierung, Orchestration, API-Flows und Notifications.
+- Läuft als Docker-Container auf NAS und VPS, orchestriert:  
+  - PDF-Reparatur-Workflows  
+  - API-Parsen (z.B. Apple Invoice Extraction)  
+  - Notification Routing (Apprise, ntfy, Discord, WhatsApp via Webhook, etc.)
+- Workflows mit JSON, Webhooks, und Schnittstellen zu LLMs/DBs/Services.
+- Dokumentation: [n8n Docs](https://docs.n8n.io/), [Community](https://community.n8n.io/), eigene Workflows dokumentiert in `/volume1/docker/n8n/` und Craft.do.
+- Wichtig: Kontext zu Trigger-Typen, Auth-Handling, Error-Flows, und eigenen Node-Implementierungen.
+- Bekannte Schwächen: Updates und Node-Kompatibilität, Langzeitstabilität bei langen Flows, gelegentliche Auth-Probleme bei APIs.
+
+### Paperless-NGX (Dokumentenmanagement)
+
+- Läuft als Docker-Container auf NAS.
+- Genutzt für: Automatisiertes Dokumenten-Tagging, -Retitling, PDF-Ingestion (inkl. Pre-Processing via Ghostscript).
+- Erweiterungen: Paperless-AI, Paperless-GPT für LLM-basierte Suche & Summarization (im Testeinsatz).
+- Workflows: n8n importiert reparierte PDFs direkt ins `consume`-Verzeichnis.
+- Pfade: `/volume1/docker/paperlessngx/`
+- Dokumentation: [Paperless-NGX Docs](https://paperless-ngx.readthedocs.io/), [GitHub](https://github.com/paperless-ngx/paperless-ngx)
+- Schwachstellen: OCR-Erkennung bei komplexen Dokumenten, PDF-Kompatibilität, API-Integrationen, Performance bei großen Beständen.
+
+### Home Assistant
+
+- Läuft auf Home Assistant Yellow (eigene Hardware), Zigbee/Thread, Matter, Apple Home-Integration.
+- Automation, Sensorik, Steuerung Licht/Medien/Sport-Setup.
+- YAML-basierte Automationen bevorzugt, visuelle Anpassungen im UI.
+- Doku: [Home Assistant Docs](https://www.home-assistant.io/docs/), Automationen teils in Craft.do, teils im NAS-Dokumentationsordner.
+- Schwächen: Zigbee/Matter-Integration bei neuen Geräten, gelegentliche Automations-Bugs, Edge Cases mit iOS-Präsenz.
+
+### Anytype (PKM)
+
+- Ziel: Anytype als zentrales PKM (Personal Knowledge Management).
+- Testweise Self-Hosting auf NAS per Docker geplant.
+- Bisher: Hauptwissen liegt noch in Craft notes, Transfer zu Anytype (inkl. API/MCP-Anbindung) in Vorbereitung.
+- Vision: Verknüpfung mit RAG/Graph-DB für tiefere Wissensintegration.
+- Doku: [Anytype Docs](https://docs.anytype.io/), [GitHub](https://github.com/anyproto/anytype-ts), [Community](https://community.anytype.io/)
+
+### Craft.do / Craft notes (PKM/Produktivität)
+
+- Haupt-App für tägliche Notizen, Protokolle, Ideen, Entscheidungslogs, Meeting Notes, Projektjournale.
+- Organisation nach PARA, aber durch dokumentbasierten Ansatz oft fragmentiert.
+- Vision: Automatisierte Extraktion, Memory Layer, Verknüpfung zu Anytype und AI-gestützte Suche (RAG, Agents).
+- API limitiert, daher bisher keine tiefere Automatisierung – Experimentierfelder offen für Agentic AI.
+- Doku: [Craft Help Center](https://support.craft.do/), eigene Struktur in Craft laufend gepflegt.
+
+---
 
 ## Dokumentation & Entscheidungsfindung
 
-- Projekte, Setup-Anleitungen, Changelogs und Entscheidungslogs liegen als Markdown auf dem NAS (z.B. `/volume1/docs/`) aber leider auch verteilt auf einer atlassian confluence instanz (nicht mehr gepflegt) und ganz viel lokal in meiner produktivitäts App craft.do auf dem macbook bzw. synchronisiert mit der craft Cloud.
-- Jedes Projekt hat ein eigenes Subverzeichnis mit README und decision-log.
-- Technische Notizen zu NAS-Konfiguration, Reverse Proxy, Zertifikaten, Container-Architektur, etc. finden sich in `/volume1/docs/homelab/` oder leider verteilt in craft notes. Deshalb wird dringend ein RAG projekt benötigt.
-- Ich versuche das PARA System für globale context Standardisierung über mehrere Apps zu nutzen. Einheitlich benannte "Areas" erleichtern mir die Orientierung.
+- Alle Setups, Logs und Entscheidungsfindung in Markdown, verteilt auf NAS (`/volume1/docs/`), Craft notes, zum Teil in (veralteter) Atlassian Confluence.
+- PARA-Standardisierung über Apps und Projekte, Ziel: Durchgängige, graphbasierte Wissenslandschaft.
+- RAG- und Agenten-Lösung als mittelfristiges Ziel für kontextbasierte Suche und Wissensvernetzung.
+
+---
 
 ## Arbeitsstil & Standards
 
-- Neue Projekte starten mit einer ausführlichen Projektbeschreibung als `claude.md` im Root-Verzeichnis.
-- Alle Konfigurationen, Shell-Skripte und Docker Compose Files sind verständlich kommentiert.
+- Jedes neue Projekt bekommt eine ausführliche Projektbeschreibung als `claude.md` im Root.
+- Alle Konfigurationen, Shell-Skripte und Docker Compose Files sind verständlich kommentiert und dokumentiert.
 - Einheitliche Volumestruktur für alle Container (`/volume1/docker/<app>`).
-- Keine unnötige Komplexität – bevorzugt lokale-first-Lösungen, SaaS nur wenn unumgänglich. Kosteneffizienz steht im Vordergrund.
-- Bevorzugt Open Source Tools und Self-Hosting, Datenhaltung möglichst auf dem NAS oder Hybrid auf eigenem VPS innerhalb der EU.
+- Klare Entscheidung für lokale-first- und Open-Source-Lösungen, EU-Hosting bevorzugt.
+
+---
 
 ## Bekannte Schwachpunkte & TODOs
 
-- Die Reverse-Proxy-Konfiguration auf Synology ist stark eingeschränkt – drum lagere ich manche Applikationen auf meinen VPS aus.
-- Qdrant UI ist verbesserungswürdig, deshalb Wechsel auf Supabase. Die lokale Inbetriebnahme des Supabase Stacks war zu aufwendig, langfristige Stabilität steht im Vordergrund und ist enorm wichtig.
-- Dokumentation zu Automations- und Notification-Workflows wird laufend aktualisiert.
-- Bisher keinerlei Erfahrung mit RAG Technologie. Stringenter Aufbau meines Know-how gewünscht, mit dem Ziel, einen eigenen Knowledge Graphen zu betreiben. Falls zu komplex, greife ich auf eine Hybride Lösung zurück und binde ein externes RAG an, sofern nicht zu teuer. Die Pragmatik und Nutzbarkeit des Systems steht im Vordergrund.
-- Die Entwicklung eigener Pipelines, AI Agents als persönliche Helfer und Assistenten ist mein Ziel.
-- Anytype möchte ich als primäres PKM Tool im Alltag einsetzen und intelligent in meinen Techstack einbinden. Die Verwaltung meines Wissens derzeit in Craft notes ist trotz aller Struktur sehr chaotisch. Die Informatione müssen viel besser verknüpft sein.
+- Reverse Proxy (Synology) limitiert → Migration/VPS-Auslagerung für kritische Apps.
+- Qdrant UI schwach → Wechsel/Parallelbetrieb mit Supabase (Cloud), Neo4j als Knowledge Graph im Test.
+- RAG/Agenten-Lösungen im Aufbau, Wissensstruktur in Craft.do chaotisch → Ziel: Konsolidierung via Anytype und RAG.
+- Bisher keine produktive Graph- oder Memory-Layer-Lösung → Experimentierfeld für AI Agents.
+- Home Assistant Automationen für Spezialfälle (Edge Cases) noch optimierungsbedürftig.
 
 ---
 
@@ -94,8 +134,11 @@
 - n8n: `/volume1/docker/n8n/`
 - Qdrant: `/volume1/docker/qdrant/`
 - Anytype Self-Hosting: `/volume1/docker/anytype/`
+- Craft notes: lokal auf Mac, synchronisiert mit Craft Cloud
 
 ---
 
-**Hinweis für Claude:**  
-Wenn Fragen zu Infrastruktur, Netzwerk, Container, Automation oder Datenstruktur auftreten, beziehe dich auf diesen Grundkontext. Bei Detailfragen zu Projekten bitte gezielt die Projekt-spezifische `claude.md` abfragen oder weitere Details anfordern.
+**Technologie-Spezifika für Claude:**  
+Wenn Rückfragen zu n8n, Paperless-NGX, Home Assistant, Anytype oder Craft auftreten, ziehe zuerst die offizielle Dokumentation der jeweiligen Plattform heran.  
+Berücksichtige stets die Architektur und Workflows aus diesem Grundkontext.  
+Frage bei Unsicherheit gezielt nach Projekt-spezifischer `claude.md` oder relevanten Detail-Logs.
