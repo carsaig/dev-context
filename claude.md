@@ -77,6 +77,9 @@
   - Markt unreif, experimenteller Betrieb auf Mac und in Docker, Ziel: zentraler, via Proxy angebundener Stack auf NAS
   - Problem: Integration meist clientbasiert und chaotisch, Schnittstellen inkonsistent, API-Standards fehlen
   - Ziel: Remote Proxy auf Synology Docker für künftige MCP/Agentic KI-Workflows
+  - Installierte MCP Server im Testbetrieb: sequential-thinking, github, perplexity-ask, exa, puppeteer, Context7, n8n, openmemory/ mem0, supabase, siri-shortcuts, karakeep, travel-planner, api-jeanmemory-com (mit Graph-DB und Visualisierung!), paperless-mcp, mcp-supermemory-ai, messages (mac)
+  - Schwerpunkt eingesetzter MCP Server soll sein: Langzeit Memory, Echtzeitsuche (Tavily, Exa, perplexity, etc.), Anbindung lokaler Systeme (N8N, Karakeep, paperless, Synology), Anbindung RAG/ KNowledge Graph, planning: CoT, sequential thinking, task planning, Aktuelle Dokumentation: Context7 oä. --> ganz wichtig! Anbindung Apple Ökosystem, Schnittstelle zu lokalen Programmen auf Mac, Projektmangement, DevOps, Produktivität, Finance, Dokumentenmanagement.
+  - Erweiterte MCP Use-Cases: Datenanalyse, Webscraping (besonders aktuelle lerninhalte oder Dokumentation), Marketing tasks, Data Wrangling
 
 ---
 
@@ -93,7 +96,7 @@
 - **Craft Notes**: Haupt-Wissensspeicher, PARA, Memory Layer/Knowledge Graph geplant  
   - [Craft Help](https://support.craft.do/)
 - **Miro**: Visuelles Whiteboard, Migration zu Open Source Alternative geplant
-- **Mem0**: (Geplant) Vektorisierter, zentrales Memory Layer für alle Chats, Code-Fragmente, Entscheidungen
+- **Mem0**: (Neu im Einsatz) Vektorisierter, zentrales Memory Layer für alle Chats, Code-Fragmente, Entscheidungen
 
 ---
 
@@ -111,16 +114,16 @@
 - **Ziel**: Entwicklung eines homogenen, PARA-erweiterten Datenmodells über Knowledge Graph/RAG/PKM-API/Agents
 - **Aufgaben**:  
   - Modellierung von Entitäten, Kategorien und Beziehungen (Projekt ↔ Datei ↔ Notiz ↔ Ressource ↔ Visualisierung)
-  - Schnittstellen für Craft, Synology, Miro, Anytype, Home Assistant, n8n schaffen
+  - Schnittstellen für Craft, Synology, Miro, Anytype, n8n schaffen
   - Entscheidungs-, Changelog- und Ressourcenverwaltung systemübergreifend konsolidieren
 
 ---
 
 ## Bekannte Schwachpunkte & TODOs
 
-- Daten und Wissen fragmentiert auf Craft, NAS, Miro, Confluence, Anytype
+- Daten und Wissen fragmentiert auf Craft, NAS, Miro, Confluence, Anytype, Karakeep (nur links).
 - Miro zu teuer, dringend offene Alternative nötig
-- Anytype lokal, API/Graph fehlt noch, zentrale Integration fehlt
+- Anytype lokal, API neu vorhanden - muss getestet werden, MCP server lokal neu, läuft noch nicht remote als SSE, zentrale Integration an andere Apps fehlt noch komplett. 
 - Kein universelles Datenmodell für Wissen und Dateien – Meta-Projekt
 - Consulting- und Projektmanagement-Know-how muss dringend systematisiert und mit Workflows/Agents gestützt werden
 
