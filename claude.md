@@ -10,6 +10,11 @@
 
 - Bevorzuge strukturierte, dokumentierte Workflows in Markdown.
 - PARA (Projects, Areas, Resources, Archives) als Meta-Framework für alle Organisationsebenen – die genaue Struktur/Area-Liste passe ich bei Bedarf projektbezogen an.
+- PARA Areas: Learning/ Education, Marketing, AI, Family, Household, Finance, Hobby, IT, Cooking, Holiday, Career
+- PARA Resources
+- PARA Projects
+- PARA Inbox
+- PARA Archiv
 - Automatisierung (n8n, Node-RED, Home Assistant) und API-first-Prinzip.
 - Open Source und Self-Hosting bevorzugt. SaaS-Lösungen nur, wenn sinnvoll und (möglichst) EU-basiert.
 - Kontinuierliche Verbesserung der Arbeitsweise und Tool-Landschaft durch Retrospektiven und Dokumentation.
@@ -75,6 +80,19 @@
   - substack
   - reddit
   - spiegel.de lässt sich leider nicht auslesen, sehr ärgerlich
+  - Süddeutsche Zeitung (lässt auch keinen Export zu)
+  - Die Zeit (lässt ebenfalls keinen Export zu)
+  - Patreon Kanäle
+  - Discord Channel
+ 
+- **Social Media**
+  - ich bin Social Media abgeneigt, nutze Facebook seltenst, Instagram noch seltener, LinkedIn beruflich, Xing beruflich
+ 
+- **Datenorchestrierung/ Workflows**
+  - N8N lokal als Hauptakteur
+  - Zapier als Ausweichroute für Notfälle
+  - IFTTT als Ausweichroute (3 Workflows sollen zu N8N umziehen)
+
 
 - **Projektdaten und Ressourcen:**  
   - Liegen primär auf Synology NAS.
@@ -201,7 +219,7 @@
 - Aktuelle Herausforderung: Datenfragmentierung, fehlende einheitliche Kontext- und Wissensstruktur, keine zentrale Abbildung von Beziehungen und Kontexten zwischen Dateien, Ressourcen und Notizen über App-Grenzen hinweg.
 - Ziel: Entwicklung eines homogenen Datenmodells/Kontextmodells, das PARA ergänzt und über alle Apps und Systeme anwendbar ist (z.B. über Knowledge Graph, RAG, PKM-API-Integration, Agentic AI).
 - Tasks:  
-  - Modellierung der wichtigsten Entitäten und Beziehungen (z.B. Projekt ↔ Dateien ↔ Notizen ↔ Ressourcen ↔ Visualisierungen).
+  - Modellierung der wichtigsten Entitäten, Kategorien und Beziehungen (z.B. Projekt ↔ Dateien ↔ Notizen ↔ Ressourcen ↔ Visualisierungen).
   - Schaffung von Schnittstellen zu Craft, Synology, Miro, Anytype, Home Assistant, n8n.
   - Konsolidierung der Entscheidungs-, Changelog- und Ressourcenverwaltung über alle Systeme hinweg.
 
