@@ -24,11 +24,16 @@
   - Haupt-Notiz- und Wissensspeicher.  
   - Enthält: Meeting-Notes, Consulting-Know-how, Projekte, Methoden, Entwürfe, Protokolle, Entscheidungslogs.
   - PARA-Struktur als Ordnungsrahmen, aber aufgrund des Dokumentenansatzes oft fragmentiert.
+  - Muss eigentlich durch AnyType oä. ersetzt, der Content weitgehend migriert werden. Bin etwas ratlos, wie ich mit dem Informationsüberschuss und dessen strukturierter Organisation am besten umgehe.
 
 - **Synology Drive/NAS** (ca. 20% der Wissensinhalte, 80-90% aller Projektdaten und Ressourcen)  
   - Hauptspeicher für: Dateien, Projektunterlagen, Code, Ressourcen, Automations-Workflows, Doku, Backups.  
   - Struktur: Einheitliche Volumestruktur unter `/volume1/docker/<app>/` und `/volume1/docs/`
   - Zentrale Dateiablage, teilweise auch als Sync-Quelle für andere Tools genutzt.
+
+- **Dropbox & Gdrive**
+  - Dropbox auf dem System aber nicht aktiv (habe alles zu Synology lokal migriert)
+  - Gdrive auf dem System aber nur für experimentelle Workflows aus N8N heraus im Einsatz, sonst ungenutzt.
 
 - **Miro** (ca. 10% des Wissens, meist Visualisierungen & Prototypen)  
   - Verwendung: Visuelle Projektplanung, Mindmaps, schnelle Konzepte, Workshops.
@@ -36,7 +41,7 @@
   - Ziel: Migration auf eine alternative Whiteboard/Diagramm-Lösung (offen, vernetzt, API-zugänglich).
 
 - **Atlassian Confluence** (historisch, ca. 5%)  
-  - Veraltete Dokumentationen, Alt-Projekte, kaum gepflegt.
+  - Veraltete Dokumentationen, Alt-Projekte, kaum gepflegt --> muss zu Anytype migriert werden!
 
 - **Anytype** (Test, ca. 1%)  
   - PKM-Lösung, lokale App auf Mac (nicht auf NAS!), Ziel: künftige Integration als Memory Layer, Knowledge Graph, API-Zugriff über MCP/SSE-Proxy in Vorbereitung.
@@ -53,6 +58,17 @@
 
 ### Weiteres
 
+- **Cloud Plattformen, Hybride oder SaaS im Einsatz**
+  - Adguard-DNS, NextDNS
+  - Fabric.so
+  - Tailscale
+  - 1Password
+  - docker Hub
+  - Craft Notes
+  - Google Workspace
+  - Github
+  - Miro
+
 - **Projektdaten und Ressourcen:**  
   - Liegen primär auf Synology NAS.
   - Wissen/Beschreibung dazu in Craft Notes, Überblick/Struktur oft in Miro.
@@ -62,6 +78,7 @@
   - Bisher keine produktiv eingesetzte lokale LLM-Instanz (Performance ungenügend). Testweise verschiedene Modelle über GPT4All, Msty App und AnythingLLM geladen und für Experimente genutzt. 
   - LLM Chat Clients: Bisher hauptsächlich ChatGPT, inzwischen verstärkt Claude, vereinzelt Perplexity und testweise Witsy, 5ire, msty app, CherryStudio, NextChat.
   - Teste weiterhin verschiedene LLM Chat Clients mit MCP Anbindung auf MacOS, iOS für optimalen cross-plattform Betrieb.
+  - Primäre LLM Modelle & Anbieter: Google, OpenAI, Anthropic, Huggingface
 
 - **MCP Server:**
   - Kämpfe mit dem aktuellen Marktzustand, dass MCP Server noch für die experimentelle Ausführung auf lokalen Maschinen über das STDIO Protokoll gebaut sind. Versuche sie alle lokal auf Docker oder noch besser auf meinem NAS via Docker zu hosten und via SSE Protokoll anzusprechen, sofern sie das unterstützen
@@ -88,7 +105,7 @@
   - Fabric.so (bezahlte Dropbox Alternative mit einer art RAG im Hintergrund. Eine Kreuzung aus Bookmarking Dienst und Dropbox Pendent mit AI Features). Stabiler, schicker Service. Ich bin mir noch unsicher, ob ich ihn weiterhin nutze. Sobald ich einen eigenen, zuverlässigen Stack habe, baue ich das wieder ab. Denn: ich möchte meine Daten lokal auf dem NAS wissen, habe extra alle Daten von Dropbox und Gdrive zu Synology Drive migriert und nutze das ausschließlich als Datengrab und Ablage.
   - Homeassistant (täglich zur Steuerung meines Smarthomes im Einsatz)
   - Apple Home (ebenfalls täglich zur Steuerung einzelner Kernelemente meines Smarthomes im Einsatz
-  - Apple Ökosystem: AppleTV, HomePods, Macbooks, iPhones, iCloud etc.
+  - Apple Ökosystem: AppleTV, HomePods, Macbooks, iPhones, iCloud, Apple Health (intensiv genutzt) etc.
   - Kalender: Apple Kalender (Primär), Google Kalender als Ausweichroute eingebunden. Ich überlege mir so langsam von Apple Contacts und Kalender auf Google Contacts und Kalender zu migrieren. Das Apple Ölosystem ist hinsichtlich Automatisierung schlicht zu restriktiv. Ich komme von Außen schlecht oder gar nicht an Apple Kalender dran. Sehr ärgerlich in Bezug auf Einbindung in künftige RAG Szenarien.
   - Kontakte in Apple Contacts: mehr schlecht als recht gepflegt, würde mir nahtlose integration in CRM, Automatisierung und RAG wünschen, zur Produktivitätssteigerung in Bezug auf Kundendaten
   - LittleSnitch
@@ -160,7 +177,7 @@
 - Akuter Bedarf an Miro-Alternative (Self-Hosting oder Open Source).
 
 ### Mem0
-- Vektorisiertes Memory Layer für alle Chats und Code-Fragmente, Refactoring Entscheidungen
+- Vektorisiertes, zentrales Memory Layer für alle Chats und Code-Fragmente, Refactoring Entscheidungen
 
 ---
 
