@@ -68,6 +68,13 @@
   - Google Workspace
   - Github
   - Miro
+ 
+- **Datenquellen für Bookmarks**
+  - Medium.com
+  - youtube.com
+  - substack
+  - reddit
+  - spiegel.de lässt sich leider nicht auslesen, sehr ärgerlich
 
 - **Projektdaten und Ressourcen:**  
   - Liegen primär auf Synology NAS.
